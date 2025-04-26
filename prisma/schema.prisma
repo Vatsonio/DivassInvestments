@@ -15,20 +15,145 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
+  id       Int     @id @default(autoincrement())
   fullName String
-  email    String @unique
+  email    String  @unique
   password String
-  role     Role   @default(USER)
+  phone    String? @unique
+  role     Role    @default(INVESTOR)
+
+  cityId Int
+  city   City @relation(fields: [cityId], references: [id])
 
   provider   String?
   providerId String?
+
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  Business   Business[]
+  Investment Investment[]
+  Contract   Contract[]
+}
+
+model City {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  state    String?
+  User     User[]
+  Business Business[]
+}
+
+model Business {
+  id              Int    @id @default(autoincrement())
+  name            String
+  description     String
+  scale           Scale
+  status          Status @default(PENDING)
+  prozorroLink    String @unique
+  targetAmount    Float
+  currentAmount   Float  @default(0)
+  progressPercent Float  @default(0)
+
+  beforeImage String
+  afterImage  String
+
+  ownerId Int
+  owner   User @relation(fields: [ownerId], references: [id])
+
+  categoryId Int
+  category   BusinessCategory @relation(fields: [categoryId], references: [id])
+
+  cityId Int
+  city   City @relation(fields: [cityId], references: [id])
+
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  Investment Investment[]
+  Contract   Contract[]
+}
+
+model BusinessCategory {
+  id          Int        @id @default(autoincrement())
+  name        String     @unique
+  description String?
+  Business    Business[]
+}
+
+model Investment {
+  id            Int           @id @default(autoincrement())
+  amount        Float
+  paymentMethod PaymentMethod
+  status        Status        @default(PENDING)
+  rewardType    RewardType    @default(NONE)
+  rewardDetails Json?
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  businessId Int
+  business   Business @relation(fields: [businessId], references: [id])
+
+  contractId Int
+  contract   Contract @relation(fields: [contractId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
+model Contract {
+  id                     Int                    @id @default(autoincrement())
+  documentUrl            String
+  digitalSignatureStatus DigitalSignatureStatus @default(PENDING)
+
+  businessId Int
+  business   Business @relation(fields: [businessId], references: [id])
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  Investment Investment[]
+
+  createdAt DateTime  @default(now())
+  signedAt  DateTime?
+  updatedAt DateTime  @updatedAt
+}
+
 enum Role {
-  USER
+  INVESTOR
+  BUSSINESS_OWNER
   ADMIN
+  MODERATOR
+}
+
+enum Scale {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+enum Status {
+  PENDING
+  APPROVED
+  REJECTED
+  ACTIVE
+  CLOSED
+}
+
+enum PaymentMethod {
+  APPLE_PAY
+  GOOGLE_PAY
+  MONO_PAY
+  CRYPTO
+}
+
+enum RewardType {
+  BONUS
+  PERCENTAGE
+  NONE
+}
+
+enum DigitalSignatureStatus {
+  PENDING
+  SIGNED
+  REJECTED
 }

@@ -21,7 +21,11 @@ export const authOptions: AuthOptions = {
                     name: profile.name || profile.login,
                     email: profile.email,
                     image: profile.avatar_url,
-                    role: "USER" as Role,
+                    fullName: profile.name || "Default Full Name",
+                    password: "default_password",
+                    cityId: 1,
+                    role: "INVESTOR" as Role,
+                    provider: "github",
                 };
             },
         }),
@@ -51,7 +55,11 @@ export const authOptions: AuthOptions = {
                 return {
                     id: findUser.id,
                     email: findUser.email,
+                    fullName: findUser.fullName,
+                    password: findUser.password,
+                    cityId: findUser.cityId,
                     role: findUser.role,
+                    provider: findUser.provider || "credentials",
                 };
             },
         }),
@@ -75,36 +83,35 @@ export const authOptions: AuthOptions = {
                 const findUser = await prisma.user.findFirst({
                     where: {
                         OR: [
-                            {
-                                provider: account?.provider,
-                                providerId: account?.providerAccountId,
-                            },
+                            { provider: account?.provider, providerId: account?.providerAccountId },
                             { email: user.email },
                         ],
                     },
                 });
 
                 if (findUser) {
-                    await prisma.user.update({
-                        where: {
-                            id: findUser.id,
-                        },
-                        data: {
-                            provider: account?.provider,
-                            providerId: account?.providerAccountId,
-                        },
-                    });
-
+                    if (!findUser.providerId) {
+                        await prisma.user.update({
+                            where: { id: findUser.id },
+                            data: {
+                                provider: account?.provider,
+                                providerId: account?.providerAccountId,
+                            },
+                        });
+                    }
                     return true;
                 }
 
                 await prisma.user.create({
                     data: {
                         email: user.email,
-                        fullName: user.name || "User #" + user.id,
-                        password: hashSync(user.id.toString(), 10),
+                        fullName: user.name || `User-${Math.random().toString(36).substring(2, 8)}`,
+                        password: hashSync(user.email, 10),
                         provider: account?.provider,
                         providerId: account?.providerAccountId,
+                        role: "INVESTOR",
+                        cityId: 1,
+                        phone: null,
                     },
                 });
 

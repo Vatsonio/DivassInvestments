@@ -5,16 +5,22 @@ import { DefaultJWT } from "next-auth/jwt";
 declare module "next-auth" {
     interface Session {
         user: {
-            id: string;
+            id: number;
             role: Role;
-            name: string;
-            image: string;
-        };
+            email: string;
+        } & DefaultSession["user"];
     }
 
     interface User extends DefaultUser {
         id: number;
         role: Role;
+        fullName: string;
+        email: string;
+        password: string;
+        phone?: string;
+        cityId: number;
+        provider: string;
+        providerId?: string;
     }
 }
 
