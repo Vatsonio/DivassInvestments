@@ -1,7 +1,3 @@
-# The Divas 2025 Investing
-
-<!-- README.md -->
-
 <h1 align="center">The Divas 2025 Investing</h1>
 <p align="center"><em>"Інвестуй у майбутнє з впевненістю"</em></p>
 
@@ -137,13 +133,6 @@ cd Divas2025Investing
 
 ```bash
 pnpm install
-```
-
-# Запускаємо json-server (локальна БД)
-
-```bash
-pnpm add -D json-server
-pnpm run server
 ```
 
 # Запускаємо застосунок
