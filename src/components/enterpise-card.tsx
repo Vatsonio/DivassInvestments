@@ -1,10 +1,14 @@
+"use client";
+
 import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 import { MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Progress } from "./ui/progress";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 interface EnterpriseCardProps {
+    id: number; // додано
     name: string;
     address: string;
     collectedAmount: number;
@@ -13,11 +17,11 @@ interface EnterpriseCardProps {
     description: string;
     imageBefore: string;
     imageAfter: string;
-    onClick?: () => void;
     className?: string;
 }
 
 export const EnterpriseCard: React.FC<EnterpriseCardProps> = ({
+    id, // додано
     name,
     address,
     collectedAmount,
@@ -26,9 +30,10 @@ export const EnterpriseCard: React.FC<EnterpriseCardProps> = ({
     description,
     imageBefore,
     imageAfter,
-    onClick,
     className,
 }) => {
+    const router = useRouter(); // додано
+
     return (
         <div
             className={cn(
@@ -73,11 +78,11 @@ export const EnterpriseCard: React.FC<EnterpriseCardProps> = ({
                 </div>
             </div>
 
-            <div className="w-full md:w-auto flex justify-end mt-0 md:mt-auto">
+            <div className="w-full md:w-auto flex justify-end mt-0 md:mt-auto z-10">
                 <Button
                     variant="default"
-                    className="rounded-2xl w-full md:w-auto p-6"
-                    onClick={onClick}
+                    className="rounded-2xl w-full md:w-auto p-6 z-10 cursor-pointer"
+                    onClick={() => router.push(`/business/${id}`)}
                 >
                     Інвестувати
                 </Button>
