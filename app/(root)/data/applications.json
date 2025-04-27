@@ -1,0 +1,22 @@
+[
+    {
+      "businessOwner": "Ілля Ільєв",
+      "email": "divass@example.com",
+      "city": "Львів",
+      "businessType": "small",
+      "businessName": "Мій Бізнес",
+      "requiredAmount": "5000",
+      "businessHistory": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
+      "estimateFileName": "test.pdf"
+    },
+    {
+      "businessOwner": "Петро Петров",
+      "email": "divass@gmail.com",
+      "city": "Київ",
+      "businessType": "medium",
+      "businessName": "Крила",
+      "requiredAmount": "10200",
+      "businessHistory": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
+      "estimateFileName": "test.pdf"
+    }
+  ]

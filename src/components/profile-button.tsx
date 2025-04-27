@@ -26,7 +26,7 @@ export const ProfileButton: React.FC<Props> = ({ className, onClickSignIn }) => 
                 </Button>
             ) : (
                 <Link href="/profile">
-                    <Button variant="secondary" className="flex items-center gap-2" size={"lg"}>
+                    <Button variant="secondary" className="flex items-center gap-2 cursor-pointer" size={"lg"}>
                         <CircleUser size={18} />
                         Profile
                     </Button>
