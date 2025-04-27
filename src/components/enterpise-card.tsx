@@ -13,6 +13,7 @@ interface EnterpriseCardProps {
     description: string;
     imageBefore: string;
     imageAfter: string;
+    onClick?: () => void;
     className?: string;
 }
 
@@ -25,12 +26,13 @@ export const EnterpriseCard: React.FC<EnterpriseCardProps> = ({
     description,
     imageBefore,
     imageAfter,
+    onClick,
     className,
 }) => {
     return (
         <div
             className={cn(
-                "flex flex-col md:flex-row items-center gap-6 bg-white rounded-2xl px-8 py-4 shadow-md hover:shadow-lg transition-shadow duration-300",
+                "mx-auto flex flex-col md:flex-row items-center gap-6 bg-white rounded-2xl px-8 py-4 shadow-md hover:shadow-lg transition-shadow duration-300",
                 className,
             )}
         >
@@ -72,7 +74,11 @@ export const EnterpriseCard: React.FC<EnterpriseCardProps> = ({
             </div>
 
             <div className="w-full md:w-auto flex justify-end mt-0 md:mt-auto">
-                <Button variant="default" className="rounded-2xl w-full md:w-auto p-6">
+                <Button
+                    variant="default"
+                    className="rounded-2xl w-full md:w-auto p-6"
+                    onClick={onClick}
+                >
                     Інвестувати
                 </Button>
             </div>
