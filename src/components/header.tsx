@@ -37,7 +37,7 @@ export const Header = () => {
             <Link href="/" className="text-black hover:underline">
                 Business Application
             </Link>
-            <Link href="/" className="text-black hover:underline">
+            <Link href="/aboutus" className="text-black hover:underline">
                 AboutUs
             </Link>
             <div className="flex items-center gap-3">

@@ -47,50 +47,6 @@ const Home = () => {
             imageBefore="./4.png"
             imageAfter="./4_1.png"
             />
-            <EnterpriseCard
-            id={5}
-            name="Кав'ярня «Затишок»"
-            address="вул. Мироносицька, 10, Харків"
-            collectedAmount={5000}
-            targetAmount={7000}
-            progressPercent={(5000 / 7000) * 100}
-            description="Кав'ярня постраждала від вибухової хвилі. Потрібна допомога для ремонту."
-            imageBefore="./5.jpg"
-            imageAfter="./5_1.jpg"
-            />
-            <EnterpriseCard
-            id={6}
-            name="Салон краси «Гармонія»"
-            address="вул. Пушкінська, 15, Харків"
-            collectedAmount={10000}
-            targetAmount={12000}
-            progressPercent={(10000 / 12000) * 100}
-            description="Салон краси зазнав пошкоджень через обстріл. Збираємо кошти на відновлення."
-            imageBefore="./6.jpg"
-            imageAfter="./6_1.jpg"
-            />
-            <EnterpriseCard
-            id={7}
-            name="Аптека «Здоров'я»"
-            address="вул. Гоголя, 5, Харків"
-            collectedAmount={3000}
-            targetAmount={5000}
-            progressPercent={(3000 / 5000) * 100}
-            description="Аптека постраждала від удару. Потрібна допомога для відновлення роботи."
-            imageBefore="./7.jpg"
-            imageAfter="./7_1.jpg"
-            />
-            <EnterpriseCard
-            id={8}
-            name="Книжковий магазин «Читай»"
-            address="вул. Шевченка, 20, Харків"
-            collectedAmount={7000}
-            targetAmount={9000}
-            progressPercent={(7000 / 9000) * 100}
-            description="Магазин постраждав від пожежі. Збираємо кошти на ремонт."
-            imageBefore="./8.jpg"
-            imageAfter="./8_1.jpg"
-            />
         </div>
     );
 };

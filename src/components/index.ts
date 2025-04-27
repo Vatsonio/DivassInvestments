@@ -10,3 +10,4 @@ export * from "./header";
 export * from "./footer";
 export * from "./profile-button";
 export * from "./history-section";
+export * from "./aboutus";
