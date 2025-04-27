@@ -8,13 +8,13 @@ import { ProfileButton } from "./profile-button";
 export const Header = () => {
   return (
     <header className="border-b">
-      {/* Import Google Fonts for Squada One and Roboto Condensed */}
+      
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Squada+One&family=Roboto+Condensed:wght@400;700&display=swap');
       `}</style>
         <div className="container mx-auto max-w-[1280px] flex flex-col items-center py-2">
         <div className="flex justify-between items-center w-full">
-            {/* Logo */}
+           
             <Link href="/">
             <span className="text-5xl leading-none" style={{ fontFamily: "'Squada One', sans-serif" }}>
                 <span style={{ color: 'white', WebkitTextStroke: '2px black' }}>RE:</span>
@@ -30,9 +30,10 @@ export const Header = () => {
             <Link href="/" className="text-black hover:underline">
                 Details
             </Link>
-            <Link href="/" className="text-black hover:underline">
+            
+            {/* <Link href="/" className="text-black hover:underline">
                 User Profile
-            </Link>
+            </Link> */}
             <Link href="/" className="text-black hover:underline">
                 Business Application
             </Link>
@@ -41,7 +42,7 @@ export const Header = () => {
             </Link>
             <div className="flex items-center gap-3">
                     <ProfileButton />
-                </div>
+            </div>
             {/* <Link href="/" className="text-black hover:underline">
                 SignIn
             </Link>

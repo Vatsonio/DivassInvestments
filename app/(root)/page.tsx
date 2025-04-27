@@ -11,8 +11,8 @@ const Home = () => {
             targetAmount={30000}
             progressPercent={(26700 / 30000) * 100}
             description="В ніч на 31 грудня по закладу «Франик» на майдані Свободи влучив російський безпілотник. Плануємо відновлення."
-            imageBefore="./before.jpg"
-            imageAfter="./after.jpg"
+            imageBefore="./1.jpg"
+            imageAfter="./1_1.jpg"
             />
             <EnterpriseCard
             id={2}
@@ -22,8 +22,8 @@ const Home = () => {
             targetAmount={20000}
             progressPercent={(15000 / 20000) * 100}
             description="Ресторан постраждав від обстрілу. Збираємо кошти на ремонт."
-            imageBefore="./restaurant_before.jpg"
-            imageAfter="./restaurant_after.jpg"
+            imageBefore="./2.png"
+            imageAfter="./2_1.png"
             />
             <EnterpriseCard
             id={3}
@@ -33,8 +33,8 @@ const Home = () => {
             targetAmount={10000}
             progressPercent={(8000 / 10000) * 100}
             description="Магазин зазнав пошкоджень через вибух. Потрібна допомога для відновлення."
-            imageBefore="./shop_before.jpg"
-            imageAfter="./shop_after.jpg"
+            imageBefore="./3.png"
+            imageAfter="./3_1.png"
             />
             <EnterpriseCard
             id={4}
@@ -44,8 +44,8 @@ const Home = () => {
             targetAmount={15000}
             progressPercent={(12000 / 15000) * 100}
             description="Кондитерська постраждала від пожежі після обстрілу. Збираємо кошти на відновлення."
-            imageBefore="./bakery_before.jpg"
-            imageAfter="./bakery_after.jpg"
+            imageBefore="./4.png"
+            imageAfter="./4_1.png"
             />
             <EnterpriseCard
             id={5}
@@ -55,8 +55,8 @@ const Home = () => {
             targetAmount={7000}
             progressPercent={(5000 / 7000) * 100}
             description="Кав'ярня постраждала від вибухової хвилі. Потрібна допомога для ремонту."
-            imageBefore="./cafe_before.jpg"
-            imageAfter="./cafe_after.jpg"
+            imageBefore="./5.jpg"
+            imageAfter="./5_1.jpg"
             />
             <EnterpriseCard
             id={6}
@@ -66,8 +66,8 @@ const Home = () => {
             targetAmount={12000}
             progressPercent={(10000 / 12000) * 100}
             description="Салон краси зазнав пошкоджень через обстріл. Збираємо кошти на відновлення."
-            imageBefore="./salon_before.jpg"
-            imageAfter="./salon_after.jpg"
+            imageBefore="./6.jpg"
+            imageAfter="./6_1.jpg"
             />
             <EnterpriseCard
             id={7}
@@ -77,8 +77,8 @@ const Home = () => {
             targetAmount={5000}
             progressPercent={(3000 / 5000) * 100}
             description="Аптека постраждала від удару. Потрібна допомога для відновлення роботи."
-            imageBefore="./pharmacy_before.jpg"
-            imageAfter="./pharmacy_after.jpg"
+            imageBefore="./7.jpg"
+            imageAfter="./7_1.jpg"
             />
             <EnterpriseCard
             id={8}
@@ -88,8 +88,8 @@ const Home = () => {
             targetAmount={9000}
             progressPercent={(7000 / 9000) * 100}
             description="Магазин постраждав від пожежі. Збираємо кошти на ремонт."
-            imageBefore="./bookstore_before.jpg"
-            imageAfter="./bookstore_after.jpg"
+            imageBefore="./8.jpg"
+            imageAfter="./8_1.jpg"
             />
         </div>
     );
