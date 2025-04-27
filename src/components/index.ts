@@ -9,3 +9,4 @@ export * from "./search-input";
 export * from "./header";
 export * from "./profile-button";
 export * from "./history-section";
+export * from "./aboutus";
