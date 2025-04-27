@@ -1,13 +1,17 @@
-import { Header } from "@/components";
+import { Header, Footer } from "@/components";
+import {  } from "@/components";
 import { ReactNode, Suspense } from "react";
 
 const Layout = async ({ children }: { children: ReactNode }) => {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen flex flex-col">
             <Suspense>
                 <Header />
             </Suspense>
-            {children}
+            <div className="flex-grow">{children}</div>
+            <Suspense>
+                <Footer />
+            </Suspense>
         </main>
     );
 };

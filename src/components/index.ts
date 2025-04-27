@@ -7,5 +7,6 @@ export * from "./filter-checkbox";
 export * from "./filter";
 export * from "./search-input";
 export * from "./header";
+export * from "./footer";
 export * from "./profile-button";
 export * from "./history-section";
